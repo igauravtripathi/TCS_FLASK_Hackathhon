@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+   
+    {% block content %}
+    
+    
+   
+        <div class="container text-center">
+            <h4 class="text-center">{{title}}</h4>
+            <br><br>
+         <form name="create_customer" id="forms" action="" method="post" novalidate>
+        
+        
+            {{ form.hidden_tag() }}       
+            <div class="block"> {{ form.CustomerSSNID.label }}
+                    {{ form.CustomerSSNID }}
+                    {% for error in form.CustomerSSNID.errors %}
+                     <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+            </div>
+            
+            <div class="block">{{ form.Customer_name.label }}
+                    {{ form.Customer_name }}
+                    {% for error in form.Customer_name.errors %}
+                     <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+            </div>
+            
+            <div class="block"> {{ form.Age.label }}
+                    {{ form.Age }}
+                    {% for error in form.Age.errors %}
+                     <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+            </div>
+            
+            <div class="block">{{ form.Address.label }}
+                    {{ form.Address }}
+                    {% for error in form.Address.errors %}
+                     <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </div>
+            
+                <div class="block"> {{ form.State.label }}
+                    {{ form.State }}
+                    {% for error in form.State.errors %}
+                     <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="block"> {{ form.City.label }}
+                    {{ form.City }}
+                    {% for error in form.City.errors %}
+                     <span class="error-message">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="block text-center">
+                    {{ form.submit }}
+                    {{ form.reset }}
+                </div>
+            <br>
+        
+        </form>
+
+    </div>
+    {% endblock %}

@@ -1,0 +1,44 @@
+<header>
+    <nav>
+        <ul class="nav nav-pills">
+           
+
+           
+           
+            {% if not session['username'] %}
+            <li class="nav-item"><a href="{{ url_for('login') }}" class="nav-link {% if login %}active{% endif %}">Login</a></li>
+            {% else %}
+            <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link {% if index %}active{% endif %}">Home</a></li>
+            <li class="nav-item dropdown">
+                <a data-toggle="dropdown" href="" class="nav-link dropdown-toggle">Customer Management</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{ url_for('create_customer') }}">Create Customer</a>
+                    <a class="dropdown-item" href="{{ url_for('update_customer') }}">Update Customer</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                  </div>
+            
+            </li>
+            <li class="nav-item dropdown"><a data-toggle="dropdown" href="" class="nav-link dropdown-toggle{% if Account %}active{% endif %}">Account Management</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{ url_for('Account') }}">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                  </div>
+            
+            </li>   
+            <li class="nav-item dropdown"><a data-toggle="dropdown" href="" class="nav-link dropdown-toggle{% if Status %}active{% endif %}">Status Detail</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{ url_for('Status') }}">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                  </div>
+                
+                </li> 
+            <li class="nav-item"><a href="{{ url_for('Operation') }}" class="nav-link {% if Operation %}active{% endif %}">Account Operation</a></li> 
+            <li class="nav-item"><a href="{{ url_for('logout') }}" class="nav-link">Logout</a></li>
+            {% endif %}
+            
+        </ul>
+    </nav>
+    <hr style="clear:both">
+</header>
