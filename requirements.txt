@@ -241,7 +241,7 @@ tweepy==3.8.0
 tweet-parser==1.13.2
 typing-extensions==3.7.4.1
 unicodecsv==0.14.1
-urllib3==1.22
+urllib3==1.26.5
 virtualenv==16.7.6
 virtualenvwrapper-win==1.2.5
 wcwidth==0.1.7
